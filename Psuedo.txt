@@ -1,0 +1,35 @@
+Blackjack
+
+Cards 2-10 are worth their face value, face cards are each worth 10, and aces are worth either 1 or 11.;
+The player is to draw cards that total closer to 21 than the dealer, without going over 21.;
+Each player and the dealer are given two cards.;
+	Player cards are face down but they are allowed to pick them up to see.;
+	The dealer must have one card facing up and the other facing down.;
+Players and dealers can play out their hands by hitting, standing, or splitting;
+	If you hit, you take another card to get closer to 21;
+		If the total goes over 21, the player 'busts' and loses;
+			Dealers cannot hit after reaching a value of 17 in their hand;
+	If you stand, you end the round with the cards in your current hand and hope it will beat the dealers hand;
+		Dealers must stand after reaching a value of 17 in their hand;
+	Split can occur when you have two cards of the same valued cards;
+		If you split, your pair splits into two hands;
+			You play in normal fashion with your first hand until you stand or 'bust';
+				Then you play your second hand until you stand or 'bust';
+
+
+Draw 2 cards;
+	Check their values;
+		If it is 21, then stand;
+		If it is not 21 and far enough from 21, take a hit;
+		If it is not 21 and close enough to 21, stand;
+		If both cards are equal, then split;
+			Hit until your first hand value reaches a comfortable value near 21, then stand;
+			Hit until your second hand value reaches a comfortable value near 21, then stand;
+	When the dealer reveals his card;
+		Check if his hand is over 21, bust, you win;
+		Check if your hand is a higher value than his, but less than or equal to 21, you win;
+		Check if you have 21 and the dealer has 21;
+			If the dealer has a 2 card 21 and you have a 2 card 21, draw;
+			If the dealer has a 2 card 21 and you have a 3 or more card 21, you lose;
+			If the dealer has a 3 or more card 21 and you have a 2 card 21, you win;
+Repeat as many times as you wish to play;
