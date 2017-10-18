@@ -17,7 +17,7 @@ Players and dealers can play out their hands by hitting, standing, or splitting;
 				Then you play your second hand until you stand or 'bust';
 
 
-The dealer will deal 2 cards to each player and themselves from the shoe;
+The dealer will deal 2 cards to each player and themselves from the top of the shoe;
 	Check the values of each card you have;
 		If it is 21, then stand;
 		If it is not 21 and far enough from 21, take a hit;
