@@ -1,10 +1,10 @@
 Blackjack
 
-Cards 2-10 are worth their face value, face cards are each worth 10, and aces are worth either 1 or 11;
-The player is to draw cards that total closer to 21 than the dealer, without going over 21, called a bust;
-Each player and the dealer are given two cards.;
-	Player cards are face down but they are allowed to pick them up to see.;
-	The dealer must have one card facing up and the other facing down.;
+Cards 2-10 are worth their face value, face cards are worth 10, aces are worth either 1 or 11 depending on the players/dealers choice;
+The player is receive cards that total closer to 21 than the dealer, without going over 21, called a bust;
+At the start of each rounnd, each player and the dealer are dealt two cards from the top of the dealers shoe;
+	Player cards are face down but they are allowed to pick them up to see for themselves;
+	The dealer must have one card facing up, for the players to see, and the other facing down;
 Players and dealers can play out their hands by hitting, standing, or splitting;
 	If you hit, you take another card to get closer to 21;
 		If the total goes over 21, the player busts and loses;
