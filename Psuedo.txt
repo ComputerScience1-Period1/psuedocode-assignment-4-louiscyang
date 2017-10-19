@@ -1,42 +1,98 @@
 Blackjack
 
-Cards 2-10 are worth their face value, face cards are worth 10, aces are worth either 1 or 11 depending on the players/dealers choice;
+Cards 2-10 = 2-10;
+Cards J,Q,K = 10;
+Ace = 1 || 11; //depends on player or dealers choice
+int total //your hand value
+int dealertotal //dealers hand value
+int cards //your amount of cards in hand
+int dealercards //dealers amount of cards in hand
+int card1 //first card in your hand
+int card2 //second card in your hand
+int firsttotal //first hand value in a split
+int secondtotal //second hand value in a split
+
 The player is receive cards that total closer to 21 than the dealer, without going over 21, called a bust;
-At the start of each rounnd, each player and the dealer are dealt two cards from the top of the dealers shoe;
-	Player cards are face down but they are allowed to pick them up to see for themselves;
-	The dealer must have one card facing up, for the players to see, and the other facing down;
+At the start of each round, each player and the dealer are dealt two cards from the top of the dealers shoe;
+	//Player cards are face down but they are allowed to pick them up to see for themselves;
+	//The dealer must have one card facing up, for the players to see, and the other facing down;
 Players and dealers can play out their hands by hitting, standing, or splitting;
-	If you hit, you take another card to get closer to 21;
-		If the total goes over 21, the player busts and loses;
-			Dealers cannot hit after reaching a total value of 17 in their hand;
-	If you stand, you end the round with the cards in your current hand and hope it will beat the dealers hand;
-		Dealers must stand after reaching a value of 17 in their hand;
-	Split can occur when you have two cards of the same valued cards;
-		If you split, your pair splits into two hands;
-			You play in normal fashion with your first hand until you stand or 'bust';
-				Then you play your second hand until you stand or 'bust';
+	If(hit) {
+		take another card; //try to get closer to 21;
+		{
+			If(total > 21);
+				player busts and loses;
+				{
+					If(dealertotal >= 17);
+						Dealer cannot hit; //after reaching a total value of 17 in their hand;
+				}
+		}
+		}
+	If(stand) {
+		end round; //with the cards in your current hand and hope it will beat the dealers hand;
+		{
+			If(dealertotal >= 17);
+				Dealer must stand; //after reaching a total value of 17 in their hand;
+				{
+					If(Split) { //can occur when you have two cards of the same valued cards;
+						pair splits into two hands;
+							play in normal fashion; //with your first hand until you stand or bust, then 								play your second hand until you stand or bust;
+						}
+				}
+		}
+		}
 
 
 The dealer will deal 2 cards to each player and themselves from the top of the shoe;
 	Check the values of each card you have;
-		If it is 21, then stand;
-		If it is not 21 and far enough from 21, take a hit;
-		If it is not 21 and close enough to 21, stand;
-		If both cards are equal, then split;
-			Hit until your first hand value reaches a comfortable value near 21, then stand;
-				If this hands value is higher than the dealers, you win;
-					You can ignore your other split hand;
-				If the dealers hand value is higher than this hands, you lose;
+		If(total = 21) {
+				then stand;
+				}
+		If(total != 21) { //but far enough from 21
+				take a hit;
+				}
+		If(total != 21) { //and close enough to 21
+				stand;
+				}
+		If(card1=card2) {
+				then split;
+				}
+			Hit until your first hand value reaches a comfortable value near 21, 
+				then stand;
+			If(total > dealertotal) {
+						you win;
+						} //You can ignore your other split hand;
+			If(dealertotal > total) {
+						you lose;
+						}
 			Hit until your second hand value reaches a comfortable value near 21, then stand;
-				If the first hands value was less than the dealers, check your second hand;
-					If this hands value is higher than the dealers, you win;
-					If the dealers hand value is higher than yours, you lose;
+				If(firsttotal < dealertotal) {
+								check secondtotal;
+								}
+					If(secondtotal > dealertotal) {
+									you win;
+									}
+					If(dealertotal > secondtotal) {
+									you lose;
+									}
 	When the dealer reveals his card;
-		Check if the dealers hand is over 21, bust, you win;
-		Check if your hand is a higher value than the dealers, but less than or equal to 21, you win;
-		Check if you have 21 and the dealer has 21;
-			If the dealer has a 2 card 21 and you have a 2 card 21, draw;
-			If the dealer has a 2 card 21 and you have a 3 or more card 21, you lose;
-			If the dealer has a 3 or more card 21 and you have a 2 card 21, you win;
+		If(dealertotal > 21) {
+					you win;
+					}
+		If(total > dealertotal && total <= 21) {
+							win;
+							}
+		If(total = 21 && dealertotal = 21) {
+
+			If(dealercards = 2 && cards = 2) {
+							draw;
+							}
+			If(dealercards = 2 && cards >= 3) {
+							lose;
+							}
+			If(dealercards >= 3 && cards = 2) {
+							win;
+							}
+
 After the round, discard all played cards into the discard pile;
 Repeat as many times as you wish to play;
